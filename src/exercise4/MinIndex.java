@@ -7,17 +7,19 @@ public class MinIndex {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
-        int[] numbers = new int[3];
-        int min = 0;
-        System.out.println("Enter numbers: ");
+        int length = input.nextInt(); 
+        double[] numbers = new double[length];
+        double minNumber =10000000;
+        int minNumberIndex =0;   
+       for (int index = 0; index < numbers.length; index++) {
+            numbers[index] = input.nextDouble();
+        }
         for (int index = 0; index < numbers.length; index++) {
-            numbers[index] = input.nextInt();
-            if (numbers[index]<numbers[min]) {
-                min = index;
+            if(numbers[index]<minNumber){
+               minNumber = numbers[index];
+                minNumberIndex = index;
             }
         }
-        System.out.println("Min index: " + min);
+            System.out.println("Min index: " + minNumberIndex);  
     }
-
 }

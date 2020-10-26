@@ -7,19 +7,17 @@ public class MaxElement {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
-        double[] numbers = new double[3];
-        double max = 0;
-        System.out.println("Enter numbers: ");
+        int length = input.nextInt();
+        double[] numbers = new double[length];
+        double maxnumber = 0;
+       for (int index = 0; index < numbers.length; index++) {
+            numbers[index] = input.nextDouble();
+        }
         for (int index = 0; index < numbers.length; index++) {
-            numbers[index] = input.nextInt();
-            if (numbers[index]>max) {
-                max = numbers[index];
+            if(numbers[index]>maxnumber){
+               maxnumber =numbers[index];
             }
         }
-
-        String numbersAsString = Arrays.toString(numbers);
-        System.out.println("Max number: " + max);
+            System.out.println("Max number: "+maxnumber);  
     }
-
 }
